@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Match Score</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #f0f8ff;
+            padding: 50px;
+        }
+        h1 {
+            color: #2e8b57;
+        }
+        #score {
+            font-size: 2em;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #2e8b57;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #3cb371;
+        }
+    </style>
+</head>
+<body>
+    <h1>🏏 Cricket Match Score</h1>
+    <div id="score">Team A: 0 / 0</div>
+    <button onclick="updateScore()">Add Run</button>
+
+    <script>
+        let runs = 0;
+        let wickets = 0;
+
+        function updateScore() {
+            let event = Math.floor(Math.random() * 7); // 0-6
+            if(event === 0) {
+                wickets++;
+            } else {
+                runs += event;
+            }
+            document.getElementById("score").innerHTML = `Team A: ${runs} / ${wickets}`;
+        }
+    </script>
+</body>
+</html>
